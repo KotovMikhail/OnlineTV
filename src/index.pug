@@ -4,26 +4,32 @@ doctype html
 html(lang="en")
   head
     title= pageTitle
+    meta(name="viewport" content="width=device-width, initial-scale=1")
     style 
       include styles/normilize.css
       include styles/style.css
+      script()
   body
     include modules/header
 
-    section.section-banner
-      img(src="/src/images/banner.png", alt="Banner").section-banner__image
-      .container
-        .banner
-          h1.banner__title Zack Snyder's Justice League
-          .banner-info 
-            span.banner-info__year 2021
-            span.banner-info__age 18+
-            span.banner-info__time 4h 2min
-            span.banner-info__rating 8.8
-          p.banner__text Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.
-          .banner-control
-            button.banner-control__btn.banner-control__btn-main Watch
-            button.banner-control__btn.banner-control__btn-more More information
+    section.section-banner.section
+      .section-banner__content     
+        .container.section-banner__container
+          .banner
+            h1.banner__title Zack Snyder's Justice League
+            .banner-info 
+              span.banner-info__year 2021
+              span.banner-info__age 18+
+              span.banner-info__time 4h 2min
+              span.banner-info__rating 8.8
+            p.banner__text Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.
+            .banner-control
+              button.banner-control__btn.banner-control__btn-main Watch
+              button.banner-control__btn.banner-control__btn-more More information
+      
+      .section-banner__image-wrapper
+        img.section-banner__image(src="/src/images/banner.png", alt="Banner")
+
     section.section
       .container
         h2.section__h2 
@@ -119,24 +125,24 @@ html(lang="en")
             h3.actors__title Samantha Bowen
           .actors-item 
             a(href="#").actors__link
-              img(src="../src/images/actor/actor01.png", alt="").actors__img
-            h3.actors__title Samantha Bowen
+              img(src="../src/images/actor/actor02.png", alt="").actors__img
+            h3.actors__titleRhys Rhys Birch
           .actors-item 
             a(href="#").actors__link
-              img(src="../src/images/actor/actor01.png", alt="").actors__img
-            h3.actors__title Samantha Bowen
+              img(src="../src/images/actor/actor03.png", alt="").actors__img
+            h3.actors__title James Holloway
           .actors-item 
             a(href="#").actors__link
-              img(src="../src/images/actor/actor01.png", alt="").actors__img
-            h3.actors__title Samantha Bowen
+              img(src="../src/images/actor/actor04.png", alt="").actors__img
+            h3.actors__title Joshua Walton
           .actors-item 
             a(href="#").actors__link
-              img(src="../src/images/actor/actor01.png", alt="").actors__img
-            h3.actors__title Samantha Bowen
+              img(src="../src/images/actor/actor05.png", alt="").actors__img
+            h3.actors__title Patrick Elliott
           .actors-item 
             a(href="#").actors__link
-              img(src="../src/images/actor/actor01.png", alt="").actors__img
-            h3.actors__title Samantha Bowen
+              img(src="../src/images/actor/actor06.png", alt="").actors__img
+            h3.actors__title Morgan O'Neill
     section.section
       .container
         .marketing 
@@ -153,3 +159,5 @@ html(lang="en")
           button.offer__btn Register
 
     include modules/footer
+
+    script(src="js/script.js")

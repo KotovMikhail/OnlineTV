@@ -2,9 +2,16 @@
 <html lang="en">
   <head>
     <title>Online TV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
        /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
 /*# sourceMappingURL=normalize.min.css.map */@import url("https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@400;600;700;800&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 10px;
 }
@@ -13,15 +20,31 @@ body {
   background-color: #000;
   color: #fff;
   font-size: 16px;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
+  min-width: 32rem;
 }
 
 button:focus {
   outline: none;
 }
 
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .container {
-  max-width: 144rem;
+  width: 100%;
+  max-width: 147rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   margin: 0 auto;
@@ -37,12 +60,48 @@ button:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 144rem;
+  width: 100%;
+  max-width: 147rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 1023px) {
+  .header {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.logo {
+  width: 15.7rem;
+  height: 7rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.logo__img {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 1023px) {
+  .logo {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .logo {
+    width: 11.7rem;
+    height: 5rem;
+  }
 }
 
 .nav {
@@ -73,12 +132,12 @@ button:focus {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   opacity: 0;
   display: block;
   width: 100%;
-  height: .2rem;
-  margin-top: .5rem;
+  height: 0.2rem;
+  margin-top: 0.5rem;
   border-radius: 5rem;
   background: #326cff;
   background: linear-gradient(151deg, #326cff 0%, #26fff2 100%);
@@ -90,6 +149,133 @@ button:focus {
 
 .nav-link.active::after {
   opacity: 1;
+}
+
+.burger-menu {
+  display: none;
+  position: relative;
+  width: 3.5rem;
+  height: 3rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.burger-menu__icon {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  background: white;
+  width: 100%;
+  height: 0.5rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 0.4rem;
+}
+
+.burger-menu__icon::after, .burger-menu__icon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: white;
+  width: 100%;
+  height: 0.5rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 0.4rem;
+}
+
+.burger-menu__icon::after {
+  top: 1.3rem;
+}
+
+.burger-menu__icon::before {
+  top: -1.3rem;
+}
+
+@media only screen and (max-width: 1023px) {
+  .burger-menu {
+    display: block;
+    margin-right: 2.4rem;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .burger-menu {
+    margin-right: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .burger-menu {
+    width: 2.5rem;
+    height: 2rem;
+  }
+  .burger-menu__icon {
+    width: 100%;
+    height: 0.3rem;
+  }
+  .burger-menu__icon::after, .burger-menu__icon::before {
+    width: 100%;
+    height: 0.3rem;
+  }
+  .burger-menu__icon::after {
+    top: 0.8rem;
+  }
+  .burger-menu__icon::before {
+    top: -0.8rem;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  nav {
+    display: none;
+  }
+}
+
+.active {
+  overflow: hidden;
+}
+
+.active nav {
+  padding-top: 1.5rem;
+  display: block;
+  position: absolute;
+  top: 8.5rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.88);
+  z-index: 1;
+}
+
+.active .nav {
+  margin: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.active .nav-item {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1.2rem;
 }
 
 .control {
@@ -133,11 +319,30 @@ button:focus {
   height: 1.92rem;
 }
 
+@media only screen and (max-width: 1023px) {
+  .control {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-left: auto;
+  }
+  .control-item {
+    margin-left: 4rem;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .control-item {
+    margin-left: 2rem;
+  }
+}
+
 .section {
-  padding-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .section__h2 {
+  margin-bottom: 3.2rem;
   font-size: 2.8rem;
   line-height: 2rem;
   padding-left: 2rem;
@@ -148,9 +353,9 @@ button:focus {
 }
 
 .section__h2::before {
-  content: '';
+  content: "";
   display: block;
-  width: .8rem;
+  width: 0.8rem;
   height: 3.5rem;
   border-radius: 5rem;
   background: #326cff;
@@ -161,16 +366,16 @@ button:focus {
 }
 
 .section__h2::after {
-  content: '';
+  content: "";
   display: block;
-  width: .9rem;
+  width: 0.9rem;
   height: 1.5rem;
   background-image: url(images/title-arrow.svg);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
   right: 0;
-  top: calc(50% - .7rem);
+  top: calc(50% - 0.7rem);
 }
 
 .section__h2-link {
@@ -182,7 +387,7 @@ button:focus {
   border: none;
   border-radius: 10rem;
   padding: 1.5rem 3rem;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
   font-weight: 800;
   cursor: pointer;
   background: #326cff;
@@ -190,8 +395,8 @@ button:focus {
   color: #fff;
   -webkit-box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5);
           box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5);
-  -webkit-transition: .2s ease box-shadow;
-  transition: .2s ease box-shadow;
+  -webkit-transition: 0.2s ease box-shadow;
+  transition: 0.2s ease box-shadow;
   margin-top: 5.5rem;
 }
 
@@ -200,36 +405,145 @@ button:focus {
           box-shadow: 0px 0px 0px rgba(50, 108, 255, 0.5);
 }
 
+@media only screen and (max-width: 1023px) {
+  .section {
+    margin-bottom: 3.2rem;
+  }
+  .section__h2 {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    margin-bottom: 3.2rem;
+  }
+  .section__btn {
+    margin-top: 3.5rem;
+    padding: 1rem;
+    font-weight: 400;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .section__h2 {
+    margin-bottom: 2.4rem;
+  }
+  .section__h2::before {
+    width: 0.6rem;
+    height: 2.5rem;
+    top: calc(50% - 1.1rem);
+  }
+  .section__h2::after {
+    width: 0.7rem;
+    height: 1.3rem;
+    right: 0.8rem;
+    top: calc(50% - 0.4rem);
+  }
+  .section__h2-link {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+  .section__btn {
+    margin-top: 2.4rem;
+    border-radius: 1.2rem;
+  }
+}
+
 .section-banner {
-  border-bottom: .1rem solid #2F2E2E;
-  position: relative;
+  border-bottom: 0.1rem solid #2f2e2e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   overflow: hidden;
+}
+
+.section-banner__content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+.section-banner .container {
+  max-width: 147rem;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.section-banner__image-wrapper {
+  padding-bottom: 47.813%;
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(((100vw - 3rem) * 0.6) + 1.5rem);
+          flex: 0 0 calc(((100vw - 3rem) * 0.6) + 1.5rem);
+  -webkit-transform: translate(-100%, 0px);
+          transform: translate(-100%, 0px);
+  z-index: -1;
 }
 
 .section-banner__image {
   position: absolute;
-  right: 0;
-  z-index: -1;
+  width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media only screen and (min-width: 1440px) {
+  .section-banner__image-wrapper {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50vw - (0.4 - 0.5) * (1440px - 3rem));
+            flex: 0 0 calc(50vw - (0.4 - 0.5) * (1440px - 3rem));
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .section-banner {
+    padding-top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .section-banner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    padding-top: 0;
+  }
+  .section-banner .container {
+    background-color: #000;
+  }
+  .section-banner__image-wrapper {
+    padding-bottom: 80%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 
 .banner {
-  max-width: 56.2rem;
+  width: 50%;
+  height: 100%;
   padding-top: 12.2rem;
+  padding-right: 1.6rem;
   padding-bottom: 20.3rem;
+  padding-left: 0;
   background-color: #000;
   -webkit-box-shadow: 100px 0px 100px #000;
           box-shadow: 100px 0px 100px #000;
 }
 
 .banner__title {
-  font-family: 'Marcellus', serif;
+  margin: 0;
+  margin-bottom: 2.4rem;
+  font-family: "Marcellus", serif;
   font-size: 8rem;
   line-height: 7.5rem;
 }
 
 .banner__text {
-  color: #C2C2C2;
+  color: #c2c2c2;
   font-size: 1.8rem;
   line-height: 1.6;
 }
@@ -252,7 +566,7 @@ button:focus {
 }
 
 .banner-info__age::before {
-  content: '';
+  content: "";
   display: block;
   width: 100%;
   height: 2.4rem;
@@ -274,7 +588,7 @@ button:focus {
 }
 
 .banner-info__rating::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 1.6rem;
   height: 1.6rem;
@@ -294,9 +608,23 @@ button:focus {
   border: none;
   border-radius: 10rem;
   padding: 1.5rem 3rem;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
   font-weight: 800;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1023px) {
+  .banner-control__btn {
+    padding: 1rem;
+    font-weight: 400;
+    border-radius: 1.9rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .banner-control__btn {
+    border-radius: 1.2rem;
+  }
 }
 
 .banner-control__btn-main {
@@ -308,8 +636,8 @@ button:focus {
   margin-right: 3rem;
   -webkit-box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5);
           box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5);
-  -webkit-transition: .2s ease box-shadow;
-  transition: .2s ease box-shadow;
+  -webkit-transition: 0.2s ease box-shadow;
+  transition: 0.2s ease box-shadow;
 }
 
 .banner-control__btn-main:hover {
@@ -318,26 +646,115 @@ button:focus {
 }
 
 .banner-control__btn-main::after {
-  content: '';
+  content: "";
   display: block;
   width: 1.4rem;
   height: 1.8rem;
   background-image: url(images/play.svg);
   position: absolute;
   left: 3rem;
-  top: calc(50% - .9rem);
+  top: calc(50% - 0.9rem);
+}
+
+@media only screen and (max-width: 1023px) {
+  .banner-control__btn-main {
+    padding-left: 4rem;
+  }
+  .banner-control__btn-main::after {
+    left: 2rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .banner-control__btn-main {
+    margin-right: 1.6rem;
+    padding-left: 1rem;
+  }
+  .banner-control__btn-main::after {
+    content: none;
+  }
 }
 
 .banner-control__btn-more {
   background-color: #fff;
   color: #323232;
-  -webkit-transition: .2s ease background-color, .2s ease color;
-  transition: .2s ease background-color, .2s ease color;
+  -webkit-transition: 0.2s ease background-color, 0.2s ease color;
+  transition: 0.2s ease background-color, 0.2s ease color;
 }
 
 .banner-control__btn-more:hover {
   color: #fff;
   background-color: transparent;
+}
+
+@media only screen and (max-width: 767px) {
+  .banner-control {
+    margin-top: 2.4rem;
+  }
+}
+
+@media only screen and (max-width: 1147px) {
+  .banner {
+    padding-bottom: 2.4rem;
+  }
+  .banner__title {
+    margin: 0;
+    margin-bottom: 2.4rem;
+    font-size: 4.8rem;
+    line-height: 5.6rem;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .banner {
+    padding-top: 0;
+  }
+  .banner__btn {
+    padding: 1rem;
+  }
+  .banner__title {
+    font-size: 3.6rem;
+    line-height: 4.2rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .banner {
+    width: 100%;
+    margin-top: -2.5rem;
+    padding-top: 1.6rem;
+    padding-right: 0;
+    -webkit-box-shadow: 0px -20px 20px 10px #000;
+            box-shadow: 0px -20px 20px 10px #000;
+  }
+  .banner__title {
+    margin: 0;
+    margin-bottom: 1.6rem;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+  }
+  .banner-info {
+    margin-bottom: 2.4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .banner-info__year {
+    margin-right: 1.5rem;
+  }
+  .banner-info__age {
+    margin-right: 1.5rem;
+  }
+  .banner-info__time {
+    margin-right: 1.5rem;
+  }
+  .banner__text {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
 .movies {
@@ -356,12 +773,12 @@ button:focus {
 .movies-item {
   -webkit-box-shadow: 0px 0px 20px rgba(44, 176, 249, 0);
           box-shadow: 0px 0px 20px rgba(44, 176, 249, 0);
-  -webkit-transition: .2s ease box-shadow;
-  transition: .2s ease box-shadow;
+  -webkit-transition: 0.2s ease box-shadow;
+  transition: 0.2s ease box-shadow;
   border-radius: 2rem;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 14%;
-          flex: 0 0 14%;
+      -ms-flex: 0 0 14.61%;
+          flex: 0 0 14.61%;
 }
 
 .movies-item:hover {
@@ -373,19 +790,57 @@ button:focus {
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 30.9rem;
+  padding-bottom: 156.55%;
   display: block;
   border-radius: 2rem;
 }
 
 .movies__img {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media only screen and (max-width: 1023px) {
+  .movies {
+    margin-top: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .movies-item {
+    margin-bottom: 2.4rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 30.91%;
+            flex: 0 0 30.91%;
+  }
+  .movies-item:nth-last-child(-n + 3) {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .movies-item {
+    margin-bottom: 2.4rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 47.6%;
+            flex: 0 0 47.6%;
+  }
+  .movies-item:nth-last-child(-n + 3) {
+    margin-bottom: 2.4rem;
+  }
+  .movies-item:nth-last-child(-n + 2) {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .movies-link {
+    padding-bottom: 150.55%;
+  }
 }
 
 .genres {
@@ -416,38 +871,40 @@ button:focus {
 }
 
 .genres-item_romance {
-  background: linear-gradient(109.31deg, #FD093F 2.4%, #F383F1 100%);
+  background: linear-gradient(109.31deg, #fd093f 2.4%, #f383f1 100%);
 }
 
 .genres-item_drama {
-  background: linear-gradient(114.5deg, #0FFFDA 2.22%, #3CDB77 68.84%);
+  background: linear-gradient(114.5deg, #0fffda 2.22%, #3cdb77 68.84%);
 }
 
 .genres-item_historical {
-  background: linear-gradient(109.31deg, #B936FF 2.4%, #57DEDA 100%);
+  background: linear-gradient(109.31deg, #b936ff 2.4%, #57deda 100%);
 }
 
 .genres-item_action {
-  background: linear-gradient(109.31deg, #FD093F 2.4%, #FB1378 2.41%, #FCCB1A 100%);
+  background: linear-gradient(109.31deg, #fd093f 2.4%, #fb1378 2.41%, #fccb1a 100%);
 }
 
 .genres-item_sci-fi {
-  background: linear-gradient(109.31deg, #FF6472 2.4%, #FDA75D 100%);
+  background: linear-gradient(109.31deg, #ff6472 2.4%, #fda75d 100%);
 }
 
 .genres-item_horror {
-  background: linear-gradient(110.16deg, #13547A 2.37%, #80D0C7 96.77%);
+  background: linear-gradient(110.16deg, #13547a 2.37%, #80d0c7 96.77%);
 }
 
 .genres-item_comedy {
-  background: linear-gradient(109.93deg, #FFF77B 2.37%, #FFBF42 50%);
+  background: linear-gradient(109.93deg, #fff77b 2.37%, #ffbf42 50%);
 }
 
 .genres-item_documentary {
-  background: linear-gradient(109.31deg, #1FA2FF 2.4%, #1FA2FF 2.41%, #1F535C 97.46%);
+  background: linear-gradient(109.31deg, #1fa2ff 2.4%, #1fa2ff 2.41%, #1f535c 97.46%);
 }
 
 .genres-icon {
+  margin: 0 auto;
+  width: 8rem;
   height: 8rem;
   position: relative;
   overflow: hidden;
@@ -466,7 +923,53 @@ button:focus {
 .genres__title {
   font-size: 2.8rem;
   font-weight: 700;
-  margin: .2rem 0 0 0;
+  margin: 0.2rem 0 0 0;
+}
+
+@media only screen and (max-width: 1147px) {
+  .genres {
+    margin-top: 0;
+  }
+  .genres__title {
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .genres-item {
+    padding-top: 2.4rem;
+    padding-left: 1.6rem;
+    padding-bottom: 2.4rem;
+    padding-right: 1.6rem;
+  }
+  .genres__title {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .genres-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 47.6%;
+            flex: 0 0 47.6%;
+    padding-top: 1.6rem;
+    padding-left: 1.6rem;
+    padding-bottom: 1.6rem;
+    padding-right: 1.6rem;
+  }
+  .genres-item:nth-last-child(-n + 2) {
+    margin-bottom: 0;
+  }
+  .genres__title {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .genres-icon {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
 }
 
 .actors {
@@ -485,29 +988,90 @@ button:focus {
 
 .actors-item {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 14%;
-          flex: 0 0 14%;
+      -ms-flex: 0 0 13.195%;
+          flex: 0 0 13.195%;
 }
 
 .actors__link {
+  margin: 0 auto;
   overflow: hidden;
   position: relative;
-  width: 19rem;
-  height: 19rem;
+  width: 100%;
+  padding-bottom: 100%;
   display: block;
   border-radius: 100%;
 }
 
 .actors__img {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 19rem;
-  height: 19rem;
+  width: 100%;
+  height: 100%;
+}
+
+.actors__title {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 1147px) {
+  .actors {
+    margin-top: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .actors-item {
+    margin-bottom: 2.4rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 30.195%;
+            flex: 0 0 30.195%;
+  }
+  .actors__link {
+    margin: 0 auto;
+    padding-bottom: 0;
+    border-radius: 0;
+  }
+  .actors__img {
+    margin: 0 auto;
+    position: static;
+    top: auto;
+    left: auto;
+    -o-object-fit: unset;
+       object-fit: unset;
+    width: 19rem;
+    height: 19rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .actors {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .actors-item {
+    margin-bottom: 1.6rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 47.195%;
+            flex: 0 0 47.195%;
+  }
+  .actors__img {
+    width: 16rem;
+    height: 16rem;
+  }
+  .actors__title {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .actors__img {
+    width: 12rem;
+    height: 12rem;
+  }
 }
 
 .marketing {
@@ -526,16 +1090,18 @@ button:focus {
 
 .marketing-item {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
   border-radius: 2rem;
+  -webkit-box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.1);
+          box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.1);
 }
 
-.marketing-item:first-child .marketing__link {
+.marketing-item:first-child .marketing__img {
   border-radius: 2rem 0 0 2rem;
 }
 
-.marketing-item:last-child .marketing__link {
+.marketing-item:last-child .marketing__img {
   border-radius: 0 2rem 2rem 0;
 }
 
@@ -543,18 +1109,43 @@ button:focus {
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 34.1rem;
+  padding-bottom: 47.362%;
   display: block;
 }
 
 .marketing__img {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 1023px) {
+  .marketing {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .marketing {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .marketing-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    border-radius: 2rem;
+  }
+  .marketing-item:first-child .marketing__img {
+    border-radius: 2rem 2rem 0 0;
+  }
+  .marketing-item:last-child .marketing__img {
+    border-radius: 0 0 2rem 2rem;
+  }
 }
 
 .offer {
@@ -570,28 +1161,43 @@ button:focus {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-image: url(images/offer-bg.png);
-  padding: 7.2rem 14.7rem 7.2rem 5.7rem;
-  background-size: contain;
+  padding: 7.2rem 9.1875vw 7.2rem 5.7rem;
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
   margin-top: 7rem;
   margin-bottom: 12.1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border-radius: 2rem;
+}
+
+@media only screen and (min-width: 1600px) {
+  .offer {
+    padding-right: 14.7rem;
+  }
 }
 
 .offer__title {
-  font-size: 6.4rem;
   font-weight: 700;
+  font-size: calc(24px + 40 * ((100vw - 320px) / 1280));
   max-width: 80rem;
   margin: 0;
+  padding-right: 2.4rem;
   line-height: 1;
+}
+
+@media only screen and (min-width: 1600px) {
+  .offer__title {
+    font-size: 6.4rem;
+  }
 }
 
 .offer__btn {
   border: none;
   border-radius: 10rem;
   padding: 1.5rem 3rem;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
   font-weight: 800;
   cursor: pointer;
   background: #326cff;
@@ -599,8 +1205,8 @@ button:focus {
   color: #fff;
   -webkit-box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5);
           box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5);
-  -webkit-transition: .2s ease box-shadow;
-  transition: .2s ease box-shadow;
+  -webkit-transition: 0.2s ease box-shadow;
+  transition: 0.2s ease box-shadow;
 }
 
 .offer__btn:hover {
@@ -608,9 +1214,64 @@ button:focus {
           box-shadow: 0px 0px 0px rgba(50, 108, 255, 0.5);
 }
 
+@media only screen and (max-width: 1147px) {
+  .offer {
+    padding: 3.2rem;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .offer {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .offer {
+    padding: 2.4rem 1.6rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-self: flex-start;
+  }
+  .offer__title {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    margin-bottom: 2.4rem;
+    padding-right: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+  .offer__btn {
+    border-radius: 1.2rem;
+  }
+}
+
 footer {
   background-color: #101012;
   padding: 7rem 0 5rem;
+}
+
+@media only screen and (max-width: 1147px) {
+  footer {
+    padding: 5rem 0 5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  footer {
+    padding: 0;
+  }
 }
 
 .footer {
@@ -628,6 +1289,22 @@ footer {
   margin: 0 auto;
 }
 
+.footer-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
 .footer-list {
   list-style: none;
   padding-left: 0;
@@ -638,18 +1315,66 @@ footer {
   margin-bottom: 2rem;
 }
 
+.footer-list__item:last-child {
+  margin-bottom: 0;
+}
+
 .footer-list__link {
   font-size: 1.8rem;
-  color: #C2C2C2;
+  color: #c2c2c2;
   text-decoration: none;
   font-weight: 600;
 }
+
+@media only screen and (max-width: 1147px) {
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .footer-item {
+    margin-bottom: 3.2rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 48.5%;
+            flex: 0 1 48.5%;
+  }
+  .footer-item:nth-child(1) {
+    margin-bottom: 3.2rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .footer-list__item {
+    margin-bottom: 0.6rem;
+  }
+  .footer-list__link {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .footer-item {
+    margin-bottom: 2.4rem;
+  }
+  .footer-item:last-child {
+    margin-bottom: 0;
+  }
+  .footer-item:nth-child(1) {
+    margin-bottom: 2.4rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */
+      <script></script>
     </style>
   </head>
   <body>
     <header>
-      <div class="header"> <a href="#"><img src="images/logo.svg" alt="Logo"></a>
+      <div class="header"> <a class="logo" href="#"><img class="logo__img" src="images/logo.svg" alt="Logo"></a>
         <nav> 
           <ul class="nav">
             <li class="nav-item"> <a class="nav-link active" href="">Home</a></li>
@@ -658,6 +1383,7 @@ footer {
             <li class="nav-item"> <a class="nav-link" href="">Series</a></li>
           </ul>
         </nav>
+        <button class="burger-menu"><span class="burger-menu__icon"></span></button>
         <ul class="control">
           <li class="control-item"> 
             <button class="control-btn control-btn_search"></button>
@@ -671,29 +1397,32 @@ footer {
         </ul>
       </div>
     </header>
-    <section class="section-banner"><img class="section-banner__image" src="images/banner.png" alt="Banner">
-      <div class="container">
-        <div class="banner">
-          <h1 class="banner__title">Zack Snyder's Justice League</h1>
-          <div class="banner-info"> <span class="banner-info__year">2021</span><span class="banner-info__age">18+</span><span class="banner-info__time">4h 2min</span><span class="banner-info__rating">8.8</span></div>
-          <p class="banner__text">Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.</p>
-          <div class="banner-control">
-            <button class="banner-control__btn banner-control__btn-main">Watch</button>
-            <button class="banner-control__btn banner-control__btn-more">More information</button>
+    <section class="section-banner section">
+      <div class="section-banner__content">    
+        <div class="container section-banner__container">
+          <div class="banner">
+            <h1 class="banner__title">Zack Snyder's Justice League</h1>
+            <div class="banner-info"> <span class="banner-info__year">2021</span><span class="banner-info__age">18+</span><span class="banner-info__time">4h 2min</span><span class="banner-info__rating">8.8</span></div>
+            <p class="banner__text">Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.</p>
+            <div class="banner-control">
+              <button class="banner-control__btn banner-control__btn-main">Watch</button>
+              <button class="banner-control__btn banner-control__btn-more">More information</button>
+            </div>
           </div>
         </div>
       </div>
+      <div class="section-banner__image-wrapper"><img class="section-banner__image" src="/src/images/banner.png" alt="Banner"></div>
     </section>
     <section class="section">
       <div class="container">
         <h2 class="section__h2"> <a class="section__h2-link" href="#">Trending TV Shows</a></h2>
         <div class="movies"> 
-          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="images/posters/poster01.png" alt=""></a></div>
-          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="images/posters/poster02.png" alt=""></a></div>
-          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="images/posters/poster03.png" alt=""></a></div>
-          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="images/posters/poster04.png" alt=""></a></div>
-          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="images/posters/poster05.png" alt=""></a></div>
-          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="images/posters/poster06.png" alt=""></a></div>
+          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="../src/images/posters/poster01.png" alt=""></a></div>
+          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="../src/images/posters/poster02.png" alt=""></a></div>
+          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="../src/images/posters/poster03.png" alt=""></a></div>
+          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="../src/images/posters/poster04.png" alt=""></a></div>
+          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="../src/images/posters/poster05.png" alt=""></a></div>
+          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="../src/images/posters/poster06.png" alt=""></a></div>
         </div>
       </div>
     </section>
@@ -701,12 +1430,12 @@ footer {
       <div class="container">
         <h2 class="section__h2"> <a class="section__h2-link" href="#">Trending Movies</a></h2>
         <div class="movies"> 
-          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="images/posters/poster01.png" alt=""></a></div>
-          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="images/posters/poster02.png" alt=""></a></div>
-          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="images/posters/poster03.png" alt=""></a></div>
-          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="images/posters/poster04.png" alt=""></a></div>
-          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="images/posters/poster05.png" alt=""></a></div>
-          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="images/posters/poster06.png" alt=""></a></div>
+          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="../src/images/posters/poster01.png" alt=""></a></div>
+          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="../src/images/posters/poster02.png" alt=""></a></div>
+          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="../src/images/posters/poster03.png" alt=""></a></div>
+          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="../src/images/posters/poster04.png" alt=""></a></div>
+          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="../src/images/posters/poster05.png" alt=""></a></div>
+          <div class="movies-item"> <a class="movies__link" href="#"><img class="movies__img" src="../src/images/posters/poster06.png" alt=""></a></div>
         </div>
         <button class="section__btn">See more</button>
       </div>
@@ -716,35 +1445,35 @@ footer {
         <h2 class="section__h2"> <a class="section__h2-link" href="#">Popular Genres</a></h2>
         <div class="genres">
           <div class="genres-item genres-item_romance">
-            <div class="genres-icon"><img class="genres__image" src="images/genres/romance.svg" alt=""></div>
+            <div class="genres-icon"><img class="genres__image" src="../src/images/genres/romance.svg" alt=""></div>
             <h3 class="genres__title">Romance</h3>
           </div>
           <div class="genres-item genres-item_drama">
-            <div class="genres-icon"><img class="genres__image" src="images/genres/drama.svg" alt=""></div>
+            <div class="genres-icon"><img class="genres__image" src="../src/images/genres/drama.svg" alt=""></div>
             <h3 class="genres__title">Drama</h3>
           </div>
           <div class="genres-item genres-item_historical">
-            <div class="genres-icon"><img class="genres__image" src="images/genres/historical.svg" alt=""></div>
+            <div class="genres-icon"><img class="genres__image" src="../src/images/genres/historical.svg" alt=""></div>
             <h3 class="genres__title">Historical</h3>
           </div>
           <div class="genres-item genres-item_action">
-            <div class="genres-icon"><img class="genres__image" src="images/genres/action.svg" alt=""></div>
+            <div class="genres-icon"><img class="genres__image" src="../src/images/genres/action.svg" alt=""></div>
             <h3 class="genres__title">Action</h3>
           </div>
           <div class="genres-item genres-item_sci-fi">
-            <div class="genres-icon"><img class="genres__image" src="images/genres/sci-fi.svg" alt=""></div>
+            <div class="genres-icon"><img class="genres__image" src="../src/images/genres/sci-fi.svg" alt=""></div>
             <h3 class="genres__title">Sci-fi</h3>
           </div>
           <div class="genres-item genres-item_horror">
-            <div class="genres-icon"><img class="genres__image" src="images/genres/horror.svg" alt=""></div>
+            <div class="genres-icon"><img class="genres__image" src="../src/images/genres/horror.svg" alt=""></div>
             <h3 class="genres__title">Horror</h3>
           </div>
           <div class="genres-item genres-item_comedy">
-            <div class="genres-icon"><img class="genres__image" src="images/genres/comedy.svg" alt=""></div>
+            <div class="genres-icon"><img class="genres__image" src="../src/images/genres/comedy.svg" alt=""></div>
             <h3 class="genres__title">Comedy</h3>
           </div>
           <div class="genres-item genres-item_documentary">
-            <div class="genres-icon"><img class="genres__image" src="images/genres/documentary.svg" alt=""></div>
+            <div class="genres-icon"><img class="genres__image" src="../src/images/genres/documentary.svg" alt=""></div>
             <h3 class="genres__title">Documentary</h3>
           </div>
         </div>
@@ -754,23 +1483,23 @@ footer {
       <div class="container">
         <h2 class="section__h2"> <a class="section__h2-link" href="#">Popular Actors & Directors</a></h2>
         <div class="actors">
-          <div class="actors-item"> <a class="actors__link" href="#"><img class="actors__img" src="images/actor/actor01.png" alt=""></a>
+          <div class="actors-item"> <a class="actors__link" href="#"><img class="actors__img" src="../src/images/actor/actor01.png" alt=""></a>
             <h3 class="actors__title">Samantha Bowen</h3>
           </div>
-          <div class="actors-item"> <a class="actors__link" href="#"><img class="actors__img" src="images/actor/actor01.png" alt=""></a>
-            <h3 class="actors__title">Samantha Bowen</h3>
+          <div class="actors-item"> <a class="actors__link" href="#"><img class="actors__img" src="../src/images/actor/actor02.png" alt=""></a>
+            <h3 class="actors__titleRhys">Rhys Birch</h3>
           </div>
-          <div class="actors-item"> <a class="actors__link" href="#"><img class="actors__img" src="images/actor/actor01.png" alt=""></a>
-            <h3 class="actors__title">Samantha Bowen</h3>
+          <div class="actors-item"> <a class="actors__link" href="#"><img class="actors__img" src="../src/images/actor/actor03.png" alt=""></a>
+            <h3 class="actors__title">James Holloway</h3>
           </div>
-          <div class="actors-item"> <a class="actors__link" href="#"><img class="actors__img" src="images/actor/actor01.png" alt=""></a>
-            <h3 class="actors__title">Samantha Bowen</h3>
+          <div class="actors-item"> <a class="actors__link" href="#"><img class="actors__img" src="../src/images/actor/actor04.png" alt=""></a>
+            <h3 class="actors__title">Joshua Walton</h3>
           </div>
-          <div class="actors-item"> <a class="actors__link" href="#"><img class="actors__img" src="images/actor/actor01.png" alt=""></a>
-            <h3 class="actors__title">Samantha Bowen</h3>
+          <div class="actors-item"> <a class="actors__link" href="#"><img class="actors__img" src="../src/images/actor/actor05.png" alt=""></a>
+            <h3 class="actors__title">Patrick Elliott</h3>
           </div>
-          <div class="actors-item"> <a class="actors__link" href="#"><img class="actors__img" src="images/actor/actor01.png" alt=""></a>
-            <h3 class="actors__title">Samantha Bowen</h3>
+          <div class="actors-item"> <a class="actors__link" href="#"><img class="actors__img" src="../src/images/actor/actor06.png" alt=""></a>
+            <h3 class="actors__title">Morgan O'Neill</h3>
           </div>
         </div>
       </div>
@@ -778,8 +1507,8 @@ footer {
     <section class="section">
       <div class="container">
         <div class="marketing"> 
-          <div class="marketing-item"> <a class="marketing__link" href=""><img class="marketing__img" src="images/marketing/marketing01.png" alt=""></a></div>
-          <div class="marketing-item"> <a class="marketing__link" href=""><img class="marketing__img" src="images/marketing/marketing02.png" alt=""></a></div>
+          <div class="marketing-item"> <a class="marketing__link" href=""><img class="marketing__img" src="../src/images/marketing/marketing01.png" alt=""></a></div>
+          <div class="marketing-item"> <a class="marketing__link" href=""><img class="marketing__img" src="../src/images/marketing/marketing02.png" alt=""></a></div>
         </div>
       </div>
     </section>
@@ -793,7 +1522,7 @@ footer {
     </section>
     <footer> 
       <div class="footer"> 
-        <div class="footer-item"> <a href="#"><img src="images/logo.svg" alt="Logo"></a></div>
+        <div class="footer-item"> <a class="logo" href="#"><img class="logo__img" src="images/logo.svg" alt="Logo"></a></div>
         <div class="footer-item"> 
           <ul class="footer-list"> 
             <li class="footer-list__item"> <a class="footer-list__link" href="#">Voice over and Subtitle</a></li>
@@ -825,5 +1554,6 @@ footer {
         </div>
       </div>
     </footer>
+    <script src="js/script.js"></script>
   </body>
 </html>
