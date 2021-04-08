@@ -772,6 +772,10 @@ img {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 14.61%;
           flex: 0 0 14.61%;
+  -webkit-transition: -webkit-box-shadow 0.2s;
+  transition: -webkit-box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
 }
 
 .movies-item:hover {
