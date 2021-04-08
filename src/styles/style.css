@@ -1350,11 +1350,14 @@ footer {
     margin-bottom: 0.6rem;
   }
   .footer-list__link {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 }
 
 @media only screen and (max-width: 435px) {
+  .footer-list__link {
+    font-size: 1.3rem;
+  }
   .footer-item {
     margin-bottom: 2.4rem;
   }

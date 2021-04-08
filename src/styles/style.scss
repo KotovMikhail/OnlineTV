@@ -1168,12 +1168,18 @@ footer {
                 margin-bottom: 0.6rem;   
             }
             &__link {
-                font-size: 1.3rem;
+                font-size: 1.6rem;
             }
         }
     }
 
     @include mobile-sm {
+        &-list {      
+            &__link {
+                font-size: 1.3rem;
+            }
+        }
+
         &-item {
             margin-bottom: 2.4rem;          
 
