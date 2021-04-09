@@ -688,6 +688,7 @@ img {
 
 @media only screen and (max-width: 1147px) {
   .banner {
+    padding-top: 2.4rem;
     padding-bottom: 2.4rem;
   }
   .banner__title {
