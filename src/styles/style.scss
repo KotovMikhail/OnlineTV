@@ -495,10 +495,10 @@ img {
 }
 
 .banner {
-    width: 50%;
+    width: 41%;
     height: 100%;
     padding-top: 12.2rem;
-    padding-right: 1.6rem;
+    padding-right: 2.6rem;
     padding-bottom: 20.3rem;
     padding-left: 0;
     background-color: $black;
@@ -509,8 +509,16 @@ img {
         margin-bottom: 2.4rem;
         font-family: "Marcellus", serif;
         font-size: 8rem;
+        @include adaptiv-font(80, 36);
         line-height: 7.5rem;
     }
+
+    @media only screen and (min-width: 1600px) {
+        &__title {
+            font-size: 8rem;
+        }
+    }
+
     &__text {
         color: #c2c2c2;
         font-size: 1.8rem;
@@ -637,6 +645,7 @@ img {
     }
 
     @include tablet-lg {
+        padding-right: 1.6rem;
         padding-top: 2.4rem;
         padding-bottom: 2.4rem;
 
