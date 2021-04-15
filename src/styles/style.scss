@@ -98,9 +98,6 @@ img {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     margin: 0 auto;
-
-    @include tablet {
-    }
 }
 
 .header {
@@ -446,6 +443,7 @@ img {
     }
 
     .container {
+        width: 100%;
         max-width: 147rem;
         margin: 0 auto;
         height: 100%;
@@ -563,7 +561,8 @@ img {
                 background-image: url(images/star.svg);
                 margin-left: 1rem;
                 position: absolute;
-                top: 0;
+                top: 50%;
+                transform: translateY(-50%);
                 right: -2.6rem;
             }
         }
@@ -654,6 +653,13 @@ img {
             margin-bottom: 2.4rem;
             font-size: 4.8rem;
             line-height: 5.6rem;
+        }
+
+
+        &-info {
+            &__time {
+                margin-right: 1.8rem;
+            }
         }
     }
 
@@ -1028,6 +1034,7 @@ img {
     }
 }
 .offer {
+    width: 100%;
     max-width: 122.4rem;
     margin: 0 auto;
     display: flex;
@@ -1050,6 +1057,7 @@ img {
     &__title {
         font-weight: 700;
         @include adaptiv-font(64, 24);
+        width: 100%;
         max-width: 80rem;
         margin: 0;
         padding-right: 2.4rem;
@@ -1125,7 +1133,7 @@ footer {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 147rem;
+    max-width: 144rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     padding-top: 1.5rem;

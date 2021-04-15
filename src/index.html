@@ -463,6 +463,7 @@ img {
 }
 
 .section-banner .container {
+  width: 100%;
   max-width: 147rem;
   margin: 0 auto;
   height: 100%;
@@ -604,7 +605,9 @@ img {
   background-image: url(images/star.svg);
   margin-left: 1rem;
   position: absolute;
-  top: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   right: -2.6rem;
 }
 
@@ -713,6 +716,9 @@ img {
     margin-bottom: 2.4rem;
     font-size: 4.8rem;
     line-height: 5.6rem;
+  }
+  .banner-info__time {
+    margin-right: 1.8rem;
   }
 }
 
@@ -1164,6 +1170,7 @@ img {
 }
 
 .offer {
+  width: 100%;
   max-width: 122.4rem;
   margin: 0 auto;
   display: -webkit-box;
@@ -1196,6 +1203,7 @@ img {
 .offer__title {
   font-weight: 700;
   font-size: calc(24px + 40 * ((100vw - 320px) / 1280));
+  width: 100%;
   max-width: 80rem;
   margin: 0;
   padding-right: 2.4rem;
@@ -1297,7 +1305,7 @@ footer {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  max-width: 147rem;
+  max-width: 144rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 1.5rem;
@@ -1419,7 +1427,7 @@ footer {
     <section class="section-banner section">
       <div class="section-banner__content">  
         <div class="container section-banner__container">
-          <div class="banner">         
+          <div class="banner">                   
             <h1 class="banner__title">Zack Snyder's Justice League</h1>
             <div class="banner-info"> <span class="banner-info__year">2021</span><span class="banner-info__age">18+</span><span class="banner-info__time">4h 2min</span><span class="banner-info__rating">8.8</span></div>
             <p class="banner__text">Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.</p>
